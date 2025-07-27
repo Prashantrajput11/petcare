@@ -1,0 +1,35 @@
+[
+  {
+    "id": "doc1",
+    "name": "Dr. Meera Singh",
+    "location": "Mumbai",
+    "rating": 4.8,
+    "specializations": ["Checkup", "Grooming", "Skin Care"],
+    "availability": {
+      "Monday": ["10:00 AM", "11:00 AM"],
+      "Wednesday": ["3:00 PM", "4:00 PM"]
+    }
+  },
+  {
+    "id": "doc2",
+    "name": "Dr. Rahul Verma",
+    "location": "Delhi",
+    "rating": 4.6,
+    "specializations": ["Eating Issues", "Mood / Behavior"],
+    "availability": {
+      "Tuesday": ["1:00 PM", "2:00 PM"],
+      "Friday": ["10:00 AM", "11:30 AM"]
+    }
+  },
+  {
+    "id": "doc3",
+    "name": "Dr. Anjali Iyer",
+    "location": "Bangalore",
+    "rating": 4.9,
+    "specializations": ["Checkup", "Teeth Cleaning"],
+    "availability": {
+      "Monday": ["9:00 AM", "10:00 AM"],
+      "Thursday": ["4:00 PM", "5:00 PM"]
+    }
+  }
+]
