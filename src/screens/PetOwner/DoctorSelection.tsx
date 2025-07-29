@@ -12,8 +12,19 @@ import {
 import React, { useCallback, useState, useMemo } from 'react';
 import doctors from '../../data/doctor.json';
 import DoctorCard from '../../components/Owner/DoctorCard';
+import Header from '../../components/UI/Header';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../type';
 
-const DoctorSelection = () => {
+type DoctorSelectionNavProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'DoctorSelection'
+>;
+
+type Props = {
+  navigation: DoctorSelectionNavProp;
+};
+const DoctorSelection = ({ navigation }: Props) => {
   const [selectedSpecializations, setSelectedSpecializations] = useState([]);
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
@@ -157,7 +168,11 @@ const DoctorSelection = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Available Doctors</Text>
+      <Header
+        title="Available Doctors"
+        showBackButton={true}
+        onBackPress={() => navigation.goBack()}
+      />
 
       {/* Filter and Sort Controls */}
       <View style={styles.controlsContainer}>
@@ -344,7 +359,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 12,
+    marginVertical: 12,
+    marginHorizontal: 16,
   },
   filterButton: {
     backgroundColor: '#e9ecef',

@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import React, { useState } from 'react';
+import Header from '../../components/UI/Header';
 
 const REASONS = [
   { id: 'checkup', icon: '🐾', label: 'Checkup' },

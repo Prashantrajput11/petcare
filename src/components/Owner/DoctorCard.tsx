@@ -1,23 +1,37 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import React, { memo } from 'react';
 
-const fakeHeavyComputation = () => {
-  console.log(`🧠 Running heavy calc for `);
-  let total = 0;
-  for (let i = 0; i < 5000; i++) {
-    console.log('i', i);
+// const fakeHeavyComputation = () => {
+//   console.log(`🧠 Running heavy calc for `);
+//   let total = 0;
+//   for (let i = 0; i < 5000; i++) {
+//     console.log('i', i);
 
-    total += i;
-  }
+//     total += i;
+//   }
 
-  console.log('total', total);
+//   console.log('total', total);
 
-  return total;
-};
-const DoctorCard = ({ item }) => {
+//   return total;
+// };
+
+interface DoctorItem {
+  name: string;
+  image: string;
+  location: string;
+  rating: number;
+  specializations: string[];
+  availability: {
+    [day: string]: string[]; // e.g., { Monday: ['10:00 AM', '2:00 PM'] }
+  };
+}
+
+interface DoctorCardProps {
+  item: DoctorItem;
+}
+
+const DoctorCard: React.FC<DoctorCardProps> = ({ item }) => {
   console.log('rendered');
-
-  fakeHeavyComputation();
 
   return (
     <View style={styles.card}>
@@ -66,8 +80,10 @@ const DoctorCard = ({ item }) => {
   );
 };
 
-// export default memo(DoctorCard);
-export default DoctorCard;
+export default memo(DoctorCard);
+
+export default memo(DoctorCard);
+// export default DoctorCard;
 
 const styles = StyleSheet.create({
   card: {
